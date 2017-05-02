@@ -1,0 +1,53 @@
+package com.fernando.proyectofinal.model;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * Created by Dell on 01/05/2017.
+ */
+
+public class ProductSet implements Serializable {
+    private List<Product> productList;
+    private String name, description;
+    private int imageResourceId;
+
+    public ProductSet(List<Product> productSet, String name, String description, int imageResourceId) {
+        this.productList = productSet;
+        this.name = name;
+        this.description = description;
+        this.imageResourceId = imageResourceId;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductSet(List<Product> productSet) {
+        this.productList = productSet;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getImageResourceId() {
+        return imageResourceId;
+    }
+
+    public void setImageResourceId(int imageResourceId) {
+        this.imageResourceId = imageResourceId;
+    }
+}

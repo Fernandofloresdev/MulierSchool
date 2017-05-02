@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name"> Mulier </string>
+    <string name="loginText">Ingresar</string>
+    <string name="registerText">Registrarse</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="repeatEmail">Repetir Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="repeatPassword">Repetir Contraseña</string>
+    <string name="name">Nombre</string>
+    <string name="lastName">Apellidos</string>
+    <string name="birthDate">Fecha de Nacimiento</string>
+    <string name="emailIsNotSame">El email debe coincidir</string>
+    <string name="passwordIsNotSame">Las contraseñas deben coincidir</string>
+    <string name="AssociateDescription">Introduce tus datos para mandar la solicitud</string>
+    <string name="street">Calle</string>
+    <string name="colonia">Colonia</string>
+    <string name="houseNumber">Número de Casa</string>
+    <string name="interiorHouseNumber">Número interior</string>
+    <string name="zipCode">Código Postal</string>
+    <string name="phoneNumber">Número telefónico</string>
+    <string name="houseReferences">Referencias de la casa</string>
+    <string name="state">Estado</string>
+    <string name="city">Ciudad</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="sendRequest">Enviar Solicitud</string>
+    <string-array name="mexicanStatesArray">
+        <item>Estado</item>
+        <item>Aguascalientes</item>
+        <item>Baja California</item>
+        <item>Baja California Sur</item>
+        <item>Campeche</item>
+        <item>Chiapas</item>
+        <item>Coahuila</item>
+        <item>Durango</item>
+        <item>Guanajuato</item>
+        <item>Guerrero</item>
+        <item>Hidalgo</item>
+        <item>Jalisco</item>
+        <item>México</item>
+        <item>Michoacán</item>
+        <item>Morelos</item>
+        <item>Nayarit</item>
+        <item>Nuevo León</item>
+        <item>Oaxaca</item>
+        <item>Puebla</item>
+        <item>Querétaro</item>
+        <item>Quintana Roo</item>
+        <item>San Luis Potosi</item>
+        <item>Sinaloa</item>
+        <item>Sonora</item>
+        <item>Tabasco</item>
+        <item>Tamaulipas</item>
+        <item>Tlaxcala</item>
+        <item>Veracruz</item>
+        <item>Yucatán</item>
+        <item>Zacatecas</item>
+    </string-array>
+
+    <string name="enterCodeDescription">Si tienes el código de alguien ingresalo!</string>
+    <string name="enterCode">Ingresa Código</string>
+    <string name="code">Código</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

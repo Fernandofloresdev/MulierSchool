@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    >
+
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="2dp"
+    android:elevation="10dp"
+    >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:id="@+id/thumbnail_card_member_store"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/marivi"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/name_card_member_store"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/name"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/description_card_member_store"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/AssociateDescription"
+            android:textSize="14dp"/>
+
+</LinearLayout>
+</android.support.v7.widget.CardView>
+</LinearLayout>
+

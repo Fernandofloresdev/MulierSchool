@@ -24,8 +24,9 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".MemberStoreActivity" />
         <activity android:name=".CreateStoreActivity" />
-        <activity android:name=".ProductDetailActivity"></activity>
-        <activity android:name=".CartContentActivity"></activity>
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".CartContentActivity" />
+        <activity android:name=".checkOrdersActivity"></activity>
     </application>
 
 </manifest>

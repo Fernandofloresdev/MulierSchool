@@ -32,6 +32,7 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
         public TextView nameTextView, priceTextView,quantityTextView;
         public Button plusButton, minusButton;
         public ImageButton removeButton;
+        public ImageView thumbnail;
         public ViewHolder(View view) {
             super(view);
             plusButton=(Button) view.findViewById(R.id.plusProductInCartButton);
@@ -40,6 +41,7 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
             priceTextView=(TextView)view.findViewById(R.id.priceProductInCart);
             removeButton=(ImageButton) view.findViewById(R.id.deleteProductInCartButton);
             quantityTextView=(TextView)view.findViewById(R.id.quantityProductInCart);
+            thumbnail=(ImageView)view.findViewById(R.id.productThumbnailInCart);
 
         }
     }
@@ -62,6 +64,7 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
         holder.nameTextView.setText(product.getName());
         holder.priceTextView.setText("$"+ Double.toString(product.getPrice()));
         holder.quantityTextView.setText(Integer.toString(product.getQuantity()));
+        holder.thumbnail.setImageResource(product.getImageResource());
         holder.plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -2,7 +2,15 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/customborder">
+
+        <ImageView
+            android:id="@+id/productThumbnailInCart"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/bag2"/>
 
         <LinearLayout
             android:layout_width="127dp"
@@ -27,12 +35,12 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/minusProductInCartButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
+    <Button
+        android:id="@+id/minusProductInCartButton"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="-" />
 
         <TextView
             android:id="@+id/quantityProductInCart"
@@ -41,11 +49,11 @@
             android:layout_weight="1"
             android:text="TextView" />
 
-        <Button
-            android:id="@+id/plusProductInCartButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+" />
+    <Button
+        android:id="@+id/plusProductInCartButton"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="+" />
 
         <ImageButton
             android:id="@+id/deleteProductInCartButton"

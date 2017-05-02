@@ -24,7 +24,6 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = (EditText)findViewById(R.id.emailLoginEditText);
         passwordEditText=(EditText)findViewById(R.id.passwordLoginEditText);
         Intent intent = getIntent();
-        cart = new Cart();
 
         if(intent.hasExtra("email")){
             emailEditText.setText(intent.getStringExtra("email"));

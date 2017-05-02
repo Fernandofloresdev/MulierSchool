@@ -11,11 +11,16 @@ import java.util.List;
 
 public class Cart {
     //This class will manage all the cart operations
-    public MemberStore memberStore;
-    public List<Product> productInCart;
+    private MemberStore memberStore;
+    private ArrayList<Product> productInCart = new ArrayList<>();
+    private double totalSum=0;
+    private static final Cart INSTANCE = new Cart();
 
-    public Cart(){
+    private Cart(){
+    }
 
+    public static Cart getInstance(){
+        return INSTANCE;
     }
 
     public void clear(){
@@ -56,11 +61,22 @@ public class Cart {
         this.memberStore = memberStore;
     }
 
-    public List<Product> getProductInCart() {
+    public ArrayList<Product> getProductInCart() {
         return productInCart;
     }
 
-    public void setProductInCart(List<Product> productInCart) {
+    public void setProductInCart(ArrayList<Product> productInCart) {
         this.productInCart = productInCart;
     }
+
+    public double getTotalSum() {
+        for (Product product: productInCart
+             ) {
+            totalSum +=product.getPrice()*product.getQuantity();
+
+        }
+        return totalSum;
+    }
+
+
 }

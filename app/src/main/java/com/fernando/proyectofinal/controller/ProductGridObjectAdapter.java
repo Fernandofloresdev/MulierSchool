@@ -3,12 +3,14 @@ package com.fernando.proyectofinal.controller;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fernando.proyectofinal.MemberStoreActivity;
 import com.fernando.proyectofinal.ProductDetailActivity;
@@ -28,8 +30,6 @@ import java.util.List;
 
         private List<Product> productList;
         private Context mContext;
-        private LayoutInflater inflater;
-
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             public ImageView thumbnail;
@@ -38,6 +38,7 @@ import java.util.List;
             private String name, description;
             private double price;
             private int id, imageResource, availability, quantity;
+
 
             public ViewHolder(View view) {
                 super(view);
@@ -84,7 +85,6 @@ import java.util.List;
             //member card info contains a string list of the name and the imageid  for the user
             this.productList = productList;
             this.mContext = mContext;
-
         }
 
         @Override
@@ -120,7 +120,10 @@ import java.util.List;
             holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cart.addProduct(product);
+                    Cart shoppingCart = Cart.getInstance();
+                    shoppingCart.addProduct(product);
+                    Toast.makeText(mContext,"Added to Cart", Toast.LENGTH_SHORT).show();
+                    Log.v("Products", shoppingCart.getProductInCart().toString());
                 }
             });
 

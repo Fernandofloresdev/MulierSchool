@@ -8,6 +8,7 @@ public class Member {
     private String birthDate, name, lastName, email,password;
     private int userId;
     private double earnings;
+    private boolean isAssociated;
 
     public String getBirthDate() {
         return birthDate;
@@ -63,5 +64,13 @@ public class Member {
 
     public void setEarnings(double earnings) {
         this.earnings = earnings;
+    }
+
+    public boolean isAssociated() {
+        return isAssociated;
+    }
+
+    public void setAssociated(boolean associated) {
+        isAssociated = associated;
     }
 }

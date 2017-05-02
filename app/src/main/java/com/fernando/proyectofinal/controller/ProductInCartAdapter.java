@@ -15,6 +15,7 @@ import com.fernando.proyectofinal.R;
 import com.fernando.proyectofinal.model.Cart;
 import com.fernando.proyectofinal.model.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -74,8 +75,14 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
             @Override
             public void onClick(View view) {
                 Cart cart = Cart.getInstance();
-                cart.subtractProduct(position);
-                holder.quantityTextView.setText(Integer.toString(product.getQuantity()));
+                if(product.getQuantity()>1){
+                    cart.subtractProduct(position);
+                    holder.quantityTextView.setText(Integer.toString(product.getQuantity()));
+                }else{
+                    cart.remove(position);
+                    notifyDataSetChanged();
+                }
+
             }
         });
         holder.removeButton.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +90,7 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
             public void onClick(View view) {
                 Cart cart = Cart.getInstance();
                 cart.remove(position);
+                notifyDataSetChanged();
             }
         });
 
@@ -92,4 +100,5 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
     public int getItemCount() {
         return productInCartList.size();
     }
+
 }

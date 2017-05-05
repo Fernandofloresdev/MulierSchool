@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
+import android.view.View;
 
 import com.fernando.proyectofinal.controller.OrderAdapter;
 import com.fernando.proyectofinal.model.Order;
@@ -28,11 +30,21 @@ public class CheckOrdersActivity extends AppCompatActivity {
         orderList = (ArrayList<Order>) intent.getSerializableExtra(ORDERS_FOUND);
 
         findViews();
-        rCAdapter = new OrderAdapter(this, orderList);
+        rCAdapter = new OrderAdapter(this, orderList, new OrderAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(Order order) {
+                Intent intent = new Intent(getApplicationContext(),OrderDetailActivity.class);
+                intent.putExtra(OrderDetailActivity.ORDER_RECEIVED,order);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
         ordersRecyclerView.setHasFixedSize(true);
         rCLayoutManager = new LinearLayoutManager(this);
         ordersRecyclerView.setLayoutManager(rCLayoutManager);
         ordersRecyclerView.setAdapter(rCAdapter);
+
+
 
     }
 

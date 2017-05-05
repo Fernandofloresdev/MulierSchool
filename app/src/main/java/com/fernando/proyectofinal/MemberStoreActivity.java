@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.fernando.proyectofinal.controller.ProductGridObjectAdapter;
 import com.fernando.proyectofinal.controller.ProductSetSelectorAdapter;
+import com.fernando.proyectofinal.model.DummyTest;
 import com.fernando.proyectofinal.model.GridSpacingItemDecoration;
 import com.fernando.proyectofinal.model.MemberStore;
 import com.fernando.proyectofinal.model.Product;
@@ -40,7 +41,7 @@ public class MemberStoreActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent.hasExtra(MEMBER_STORE_FOUND)){
             memberStore = (MemberStore) intent.getSerializableExtra(MEMBER_STORE_FOUND);
-            productList = getProducts();
+            productList = new DummyTest().getProducts();
             rCAdapter = new ProductGridObjectAdapter(this, productList);
         }else if(intent.hasExtra(PRODUCT_SET_FOUND)){
             ProductSet productSet = (ProductSet)intent.getSerializableExtra(PRODUCT_SET_FOUND);
@@ -80,30 +81,6 @@ public class MemberStoreActivity extends AppCompatActivity {
         fab = (FloatingActionButton) findViewById(R.id.fab);
     }
 
-    private ArrayList getProducts() {
-        ArrayList productList = new ArrayList();
-        productList.add(new Product(1, "bag1", "bag1", 15.2, R.drawable.bag1, 2));
-        productList.add(new Product(2, "bag2", "bag2", 15.2, R.drawable.bag2, 9));
-        productList.add(new Product(3, "bag3", "bag3", 15.2, R.drawable.bag3, 2));
-        productList.add(new Product(4, "bag4", "bag4", 15.2, R.drawable.bag4, 5));
-        productList.add(new Product(5, "bag5", "bag5", 15.2, R.drawable.bag5, 1));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productList.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
 
-
-        return productList;
-    }
     }
 

@@ -18,7 +18,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fernando.proyectofinal.AsyncTask.OrderTask;
 import com.fernando.proyectofinal.AsyncTask.SearchTask;
+import com.fernando.proyectofinal.AsyncTask.UpdateOrderTask;
 import com.fernando.proyectofinal.controller.MemberCardAdapter;
 import com.fernando.proyectofinal.controller.MemberController;
 import com.fernando.proyectofinal.model.Member;
@@ -127,6 +129,7 @@ public class HomeActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_slideshow) {
+            checkOrders();
 
         } else if (id == R.id.nav_manage) {
 
@@ -171,6 +174,12 @@ public class HomeActivity extends AppCompatActivity
         }
 
     }
+
+    public void checkOrders(){
+        UpdateOrderTask updateOrderTask =new UpdateOrderTask(this);
+        updateOrderTask.execute(1);
+    }
+
 
     private boolean memberHasStore(){
         return false;

@@ -70,6 +70,7 @@ public class Cart {
     }
 
     public double getTotalSum() {
+        totalSum=0;
         for (Product product: productInCart
              ) {
             totalSum +=product.getPrice()*product.getQuantity();

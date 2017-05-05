@@ -1,14 +1,21 @@
 package com.fernando.proyectofinal.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Dell on 01/05/2017.
  */
 
-public class Member {
+public class Member implements Serializable{
     private String birthDate, name, lastName, email,password;
-    private int userId;
+    private int userId, imageResource;
     private double earnings;
     private boolean isAssociated;
+
+    public Member(String name, int userId) {
+        this.name = name;
+        this.userId = userId;
+    }
 
     public String getBirthDate() {
         return birthDate;
@@ -72,5 +79,13 @@ public class Member {
 
     public void setAssociated(boolean associated) {
         isAssociated = associated;
+    }
+
+    public int getImageResource() {
+        return imageResource;
+    }
+
+    public void setImageResource(int imageResource) {
+        this.imageResource = imageResource;
     }
 }

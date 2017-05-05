@@ -9,7 +9,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cartContentRecyclerView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="487dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -36,4 +36,20 @@
         android:background="@drawable/roundedbutton"
         android:textColor="@color/cardview_light_background"
         android:onClick="order"/>
+
+    <TextView
+        android:id="@+id/totalPriceDisplayInCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/orderButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cartContentRecyclerView" />
 </android.support.constraint.ConstraintLayout>

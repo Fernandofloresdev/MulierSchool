@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.fernando.proyectofinal.MemberStoreActivity;
 import com.fernando.proyectofinal.R;
+import com.fernando.proyectofinal.model.DummyTest;
 import com.fernando.proyectofinal.model.MemberStore;
 
 /**
@@ -50,7 +51,7 @@ public class SearchTask extends AsyncTask<Integer, Void, MemberStore> {
         //In this place it will be searching
         SystemClock.sleep(1000);
 
-        memberStoreFound = searchMemberStore(params);
+        memberStoreFound = new DummyTest().searchMemberStore(params);
         //In this place we verify if the store was found
 
         return memberStoreFound;
@@ -74,8 +75,5 @@ public class SearchTask extends AsyncTask<Integer, Void, MemberStore> {
 
     }
 
-    private MemberStore searchMemberStore(Integer... params){
-        //this will be replaced with an Http action
-        return new MemberStore("Maria", "La tienda de María ", R.drawable.kelvin,1);
-    }
+
 }

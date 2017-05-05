@@ -2,6 +2,8 @@ package com.fernando.proyectofinal.controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.DataSetObserver;
+import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +29,7 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
     private List<Product> productInCartList;
     private Context mContext;
     private LayoutInflater inflater;
+    private ArrayList<DataSetObserver> observers= new ArrayList<>();
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView nameTextView, priceTextView,quantityTextView;
@@ -65,13 +68,14 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
         holder.priceTextView.setText("$"+ Double.toString(product.getPrice()));
         holder.quantityTextView.setText(Integer.toString(product.getQuantity()));
         holder.thumbnail.setImageResource(product.getImageResource());
+
         holder.plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Cart cart = Cart.getInstance();
                 cart.addProduct(product);
                 holder.quantityTextView.setText(Integer.toString(product.getQuantity()));
-
+                dataSetChanged();
             }
         });
         holder.minusButton.setOnClickListener(new View.OnClickListener() {
@@ -83,9 +87,8 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
                     holder.quantityTextView.setText(Integer.toString(product.getQuantity()));
                 }else{
                     cart.remove(position);
-                    notifyDataSetChanged();
                 }
-
+                dataSetChanged();
             }
         });
         holder.removeButton.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +96,7 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
             public void onClick(View view) {
                 Cart cart = Cart.getInstance();
                 cart.remove(position);
-                notifyDataSetChanged();
+                dataSetChanged();
             }
         });
 
@@ -102,6 +105,17 @@ public class ProductInCartAdapter extends RecyclerView.Adapter<ProductInCartAdap
     @Override
     public int getItemCount() {
         return productInCartList.size();
+    }
+
+    public void registerDataSetObserver(DataSetObserver observer){
+        observers.add(observer);
+    }
+
+    public void dataSetChanged(){
+        notifyDataSetChanged();
+        for(DataSetObserver observer: observers){
+            observer.onChanged();
+        }
     }
 
 }

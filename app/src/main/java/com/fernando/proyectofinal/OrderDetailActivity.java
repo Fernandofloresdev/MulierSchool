@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.fernando.proyectofinal.AsyncTask.AcceptOrderTask;
 import com.fernando.proyectofinal.controller.OrderDetailAdapter;
 import com.fernando.proyectofinal.controller.ProductInCartAdapter;
 import com.fernando.proyectofinal.model.Order;
@@ -44,7 +45,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         productsInOrder.setHasFixedSize(true);
         rCLayoutManager = new LinearLayoutManager(this);
         productsInOrder.setLayoutManager(rCLayoutManager);
-        rCAdapter = new OrderDetailAdapter(products,this);
+        rCAdapter = new OrderDetailAdapter(order,this);
         productsInOrder.setAdapter(rCAdapter);
 
 
@@ -57,7 +58,8 @@ public class OrderDetailActivity extends AppCompatActivity {
     }
 
     public void acceptButtonAction(View view){
-        Toast.makeText(this, "Esto aceptara la orden", Toast.LENGTH_SHORT).show();
+        AcceptOrderTask acceptOrderTask=new AcceptOrderTask(this);
+        acceptOrderTask.execute(order);
     }
 
     public void denyButtonAction(View view){

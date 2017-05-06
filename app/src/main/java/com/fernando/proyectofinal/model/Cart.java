@@ -15,6 +15,7 @@ public class Cart {
     private ArrayList<Product> productInCart = new ArrayList<>();
     private double totalSum=0;
     private static final Cart INSTANCE = new Cart();
+    private int userId;
 
     private Cart(){
     }
@@ -79,5 +80,14 @@ public class Cart {
         return totalSum;
     }
 
+    public int getUserId() {
+        return userId;
+    }
 
+    public void setUserId(int userId) {
+        if(userId!=this.userId){
+            clear();
+        }
+        this.userId = userId;
+    }
 }

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fernando.proyectofinal.R;
+import com.fernando.proyectofinal.model.Order;
 import com.fernando.proyectofinal.model.Product;
 
 import java.text.DecimalFormat;
@@ -23,11 +24,13 @@ import java.util.List;
 public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.ViewHolder>{
 
     private ArrayList<Product> productsInOrder;
+    private Order order;
     private Context mContext;
 
-    public OrderDetailAdapter(ArrayList<Product> productsInOrder, Context mContext) {
-        this.productsInOrder = productsInOrder;
+    public OrderDetailAdapter(Order order, Context mContext) {
+        this.order=order;
         this.mContext = mContext;
+        productsInOrder= order.getProductOrder();
     }
 
     @Override
@@ -38,6 +41,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        productsInOrder= order.getProductOrder();
         Product product= productsInOrder.get(position);
         holder.thumbnail.setImageResource(product.getImageResource());
         holder.name.setText(product.getName());

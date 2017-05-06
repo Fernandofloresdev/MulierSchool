@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fernando.proyectofinal.AsyncTask.AcceptOrderTask;
 import com.fernando.proyectofinal.R;
 import com.fernando.proyectofinal.model.Order;
 import com.fernando.proyectofinal.model.Product;
@@ -58,7 +59,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
         holder.acceptOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext,"Accept Order ", Toast.LENGTH_SHORT).show();
+                AcceptOrderTask acceptOrderTask = new AcceptOrderTask(mContext);
+                acceptOrderTask.execute(order);
             }
         });
     }

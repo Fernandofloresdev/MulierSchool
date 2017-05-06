@@ -18,11 +18,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fernando.proyectofinal.AsyncTask.FinancesTask;
 import com.fernando.proyectofinal.AsyncTask.OrderTask;
 import com.fernando.proyectofinal.AsyncTask.SearchTask;
 import com.fernando.proyectofinal.AsyncTask.UpdateOrderTask;
 import com.fernando.proyectofinal.controller.MemberCardAdapter;
 import com.fernando.proyectofinal.controller.MemberController;
+import com.fernando.proyectofinal.model.Cart;
 import com.fernando.proyectofinal.model.Member;
 import com.fernando.proyectofinal.model.MemberStore;
 import com.fernando.proyectofinal.model.Product;
@@ -41,6 +43,7 @@ public class HomeActivity extends AppCompatActivity
     private ImageButton searchButton;
     private String memberStoreToSearch;
     private MemberStore memberStoreFound;
+    private Cart cart ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +135,7 @@ public class HomeActivity extends AppCompatActivity
             checkOrders();
 
         } else if (id == R.id.nav_manage) {
+            getPersonalFinances();
 
         } else if (id == R.id.nav_share) {
 
@@ -178,6 +182,11 @@ public class HomeActivity extends AppCompatActivity
     public void checkOrders(){
         UpdateOrderTask updateOrderTask =new UpdateOrderTask(this);
         updateOrderTask.execute(1);
+    }
+
+    public void getPersonalFinances(){
+        FinancesTask financesTask=new FinancesTask(this);
+        financesTask.execute(1);
     }
 
 

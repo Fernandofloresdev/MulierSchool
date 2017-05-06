@@ -123,7 +123,6 @@ import java.util.List;
                     Cart shoppingCart = Cart.getInstance();
                     shoppingCart.addProduct(product);
                     Toast.makeText(mContext,"Added to Cart", Toast.LENGTH_SHORT).show();
-                    Log.v("Products", shoppingCart.getProductInCart().toString());
                 }
             });
 

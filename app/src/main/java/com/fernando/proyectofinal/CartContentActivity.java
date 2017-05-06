@@ -61,7 +61,7 @@ public class CartContentActivity extends AppCompatActivity {
 
     public void updatePrice(){
         Cart cart = Cart.getInstance();
-        priceDisplay.setText(Double.toString(cart.getTotalSum()));
+        priceDisplay.setText("$"+ Double.toString(cart.getTotalSum()));
 
         cartContent.getAdapter().registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
             @Override

@@ -27,7 +27,8 @@
         <activity android:name=".ProductDetailActivity" />
         <activity android:name=".CartContentActivity" />
         <activity android:name=".CheckOrdersActivity" />
-        <activity android:name=".OrderDetailActivity"></activity>
+        <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".PersonalFinancesActivity"></activity>
     </application>
 
 </manifest>

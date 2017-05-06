@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.fernando.proyectofinal.controller.ProductGridObjectAdapter;
 import com.fernando.proyectofinal.controller.ProductSetSelectorAdapter;
+import com.fernando.proyectofinal.model.Cart;
 import com.fernando.proyectofinal.model.DummyTest;
 import com.fernando.proyectofinal.model.GridSpacingItemDecoration;
 import com.fernando.proyectofinal.model.MemberStore;
@@ -31,11 +32,13 @@ public class MemberStoreActivity extends AppCompatActivity {
     public static final String MEMBER_STORE_FOUND = "memberStoreFound";
     public static final String PRODUCT_SET_FOUND = "productSetFound";
     public static final String MEMBER_CARD_SELECTED = "memberCardSelected";
+    private Cart cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_store);
+        cart =Cart.getInstance();
 
 
         Intent intent = getIntent();
@@ -43,6 +46,7 @@ public class MemberStoreActivity extends AppCompatActivity {
             memberStore = (MemberStore) intent.getSerializableExtra(MEMBER_STORE_FOUND);
             productList = new DummyTest().getProducts();
             rCAdapter = new ProductGridObjectAdapter(this, productList);
+            cart.setUserId(memberStore.getId());
         }else if(intent.hasExtra(PRODUCT_SET_FOUND)){
             ProductSet productSet = (ProductSet)intent.getSerializableExtra(PRODUCT_SET_FOUND);
             productList = productSet.getProductList();
@@ -50,6 +54,7 @@ public class MemberStoreActivity extends AppCompatActivity {
         }else if(intent.hasExtra(MEMBER_CARD_SELECTED)){
             memberStore = (MemberStore) intent.getSerializableExtra(MEMBER_CARD_SELECTED);
             rCAdapter = new ProductGridObjectAdapter(this, memberStore.getProducts());
+            cart.setUserId(memberStore.getId());
         }
 
 

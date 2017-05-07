@@ -1,6 +1,7 @@
 package com.fernando.proyectofinal.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,22 +9,22 @@ import java.util.List;
  */
 
 public class ProductSet implements Serializable {
-    private List<Product> productList;
+    private ArrayList<Product> productList;
     private String name, description;
     private int imageResourceId;
 
-    public ProductSet(List<Product> productSet, String name, String description, int imageResourceId) {
+    public ProductSet(ArrayList<Product> productSet, String name, String description, int imageResourceId) {
         this.productList = productSet;
         this.name = name;
         this.description = description;
         this.imageResourceId = imageResourceId;
     }
 
-    public List<Product> getProductList() {
+    public ArrayList<Product> getProductList() {
         return productList;
     }
 
-    public void setProductSet(List<Product> productSet) {
+    public void setProductSet(ArrayList<Product> productSet) {
         this.productList = productSet;
     }
 

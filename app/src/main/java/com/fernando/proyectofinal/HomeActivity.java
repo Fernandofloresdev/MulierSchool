@@ -126,8 +126,11 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             // Create Store
 
-            if(!memberHasStore()){
+            if(memberHasStore()){
                 Intent intent = new Intent(this, CreateStoreActivity.class);
+                startActivity(intent);
+            }else {
+                Intent intent = new Intent(this, AssociateActivity.class);
                 startActivity(intent);
             }
 
@@ -191,7 +194,7 @@ public class HomeActivity extends AppCompatActivity
 
 
     private boolean memberHasStore(){
-        return false;
+        return true;
     }
 
 

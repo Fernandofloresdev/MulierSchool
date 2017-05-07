@@ -16,7 +16,10 @@ import android.widget.TextView;
 
 import com.fernando.proyectofinal.ProductDetailActivity;
 import com.fernando.proyectofinal.ProductDetailFragment;
+import com.fernando.proyectofinal.ProductInSetDetailActivity;
+import com.fernando.proyectofinal.ProductInSetDetailFragment;
 import com.fernando.proyectofinal.R;
+import com.fernando.proyectofinal.model.InventoryCart;
 import com.fernando.proyectofinal.model.MemberStore;
 import com.fernando.proyectofinal.model.Product;
 
@@ -96,7 +99,7 @@ public class ProductSetSelectorAdapter extends RecyclerView.Adapter<ProductSetSe
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Product product = productList.get(position);
+        final Product product = productList.get(position);
         holder.nameTextView.setText(product.getName());
         holder.priceTextView.setText("$" + Double.toString(product.getPrice()));
         holder.thumbnail.setImageResource(product.getImageResource());
@@ -113,8 +116,8 @@ public class ProductSetSelectorAdapter extends RecyclerView.Adapter<ProductSetSe
             @Override
             public void onClick(View v) {
                 Product product = holder.packProduct();
-                Intent intent = new Intent(mContext, ProductDetailActivity.class);
-                intent.putExtra(ProductDetailFragment.ARG_ITEM, product);
+                Intent intent = new Intent(mContext, ProductInSetDetailActivity.class);
+                intent.putExtra(ProductInSetDetailFragment.ARG_ITEM, product);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
             }
@@ -123,7 +126,8 @@ public class ProductSetSelectorAdapter extends RecyclerView.Adapter<ProductSetSe
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                InventoryCart car = InventoryCart.getInstance();
+                car.addProduct(product);
             }
         });
 

@@ -28,6 +28,9 @@
         <activity android:name=".CartContentActivity" />
         <activity android:name=".CheckOrdersActivity" />
         <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".SetStoreActivity" />
+        <activity android:name=".InventoryCartContent" />
+        <activity android:name=".ProductInSetDetailActivity" />
         <activity android:name=".PersonalFinancesActivity"></activity>
     </application>
 

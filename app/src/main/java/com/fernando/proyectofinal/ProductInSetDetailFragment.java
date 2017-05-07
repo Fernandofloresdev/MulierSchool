@@ -13,13 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fernando.proyectofinal.model.Cart;
+import com.fernando.proyectofinal.model.InventoryCart;
 import com.fernando.proyectofinal.model.Product;
 
 /**
- * Created by Dell on 01/05/2017.
+ * Created by Dell on 06/05/2017.
  */
 
-public class ProductDetailFragment extends Fragment implements View.OnClickListener{
+public class ProductInSetDetailFragment extends Fragment implements View.OnClickListener{
     Product product;
     Button addToCartButton;
     public static final String ARG_ITEM = "item_id";
@@ -54,8 +55,9 @@ public class ProductDetailFragment extends Fragment implements View.OnClickListe
         Context mContext = getContext();
         switch (view.getId()){
             case R.id.addProductDetailContainerButton:
-                    Cart cart = Cart.getInstance();
-                    cart.addProduct(product);
+                InventoryCart cart = InventoryCart.getInstance();
+                cart.addProduct(product);
+                Toast.makeText(getContext(),"Added!",Toast.LENGTH_SHORT).show();
                 break;
 
         }

@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.fernando.proyectofinal.MemberStoreActivity;
 import com.fernando.proyectofinal.R;
+import com.fernando.proyectofinal.SetStoreActivity;
+import com.fernando.proyectofinal.model.InventoryCart;
 import com.fernando.proyectofinal.model.Product;
 import com.fernando.proyectofinal.model.ProductSet;
 
@@ -69,8 +71,8 @@ public class ProductSetsCardAdapter extends RecyclerView.Adapter<ProductSetsCard
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, MemberStoreActivity.class);
-                intent.putExtra(MemberStoreActivity.PRODUCT_SET_FOUND, productSet);
+                Intent intent = new Intent(mContext, SetStoreActivity.class);
+                intent.putExtra(SetStoreActivity.PRODUCT_SET_FOUND, productSet);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
             }
@@ -79,7 +81,8 @@ public class ProductSetsCardAdapter extends RecyclerView.Adapter<ProductSetsCard
         holder.addSetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ADD SET TO USER
+                InventoryCart inventoryCart = InventoryCart.getInstance();
+                inventoryCart.addSet(productSet.getProductList());
 
             }
         });

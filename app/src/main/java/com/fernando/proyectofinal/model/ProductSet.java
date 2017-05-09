@@ -11,9 +11,9 @@ import java.util.List;
 public class ProductSet implements Serializable {
     private ArrayList<Product> productList;
     private String name, description;
-    private int imageResourceId;
+    private int imageResourceId, id;
 
-    public ProductSet(ArrayList<Product> productSet, String name, String description, int imageResourceId) {
+    public ProductSet(int id, ArrayList<Product> productSet, String name, String description, int imageResourceId) {
         this.productList = productSet;
         this.name = name;
         this.description = description;

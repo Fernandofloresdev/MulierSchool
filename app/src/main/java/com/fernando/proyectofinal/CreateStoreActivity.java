@@ -38,7 +38,7 @@ public class CreateStoreActivity extends AppCompatActivity {
         ArrayList<ProductSet> productSetArrayList=new ArrayList<>();
         ArrayList<Product> products =new ArrayList<>();
         products.add(new Product(6, "bag6", "bag6", 15.2, R.drawable.bag6, 0));
-        productSetArrayList.add(new ProductSet(products,"Bag Set", " a set of beautfitul bags",R.drawable.bag4));
+        productSetArrayList.add(new ProductSet(1,products,"Bag Set", " a set of beautfitul bags",R.drawable.bag4));
 
         return productSetArrayList;
     }

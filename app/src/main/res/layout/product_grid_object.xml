@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbutton"
         android:backgroundTint="@color/colorPrimary"
+        android:elevation="4dp"
         android:text="Add to Cart"
         android:textColor="@color/cardview_light_background" />
 

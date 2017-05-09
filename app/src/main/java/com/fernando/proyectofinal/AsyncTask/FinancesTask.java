@@ -28,7 +28,7 @@ public class FinancesTask extends AsyncTask<Integer, Void, Boolean> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog.setMessage("Accepting");
+        dialog.setMessage("Obtaining finances");
         dialog.show();
     }
 
@@ -45,7 +45,6 @@ public class FinancesTask extends AsyncTask<Integer, Void, Boolean> {
         super.onPostExecute(aBoolean);
 
         dialog.dismiss();
-        Toast.makeText(context, "Order Accepted!", Toast.LENGTH_SHORT).show();
 
         days=10;
         balance =1500;

@@ -83,7 +83,6 @@ public class ProductSetsCardAdapter extends RecyclerView.Adapter<ProductSetsCard
             public void onClick(View view) {
                 InventoryCart inventoryCart = InventoryCart.getInstance();
                 inventoryCart.addSet(productSet.getProductList());
-
             }
         });
 

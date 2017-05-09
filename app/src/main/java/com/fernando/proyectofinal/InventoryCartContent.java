@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.fernando.proyectofinal.AsyncTask.OrderTask;
 import com.fernando.proyectofinal.AsyncTask.addSetTask;
 import com.fernando.proyectofinal.controller.ProductInCartAdapter;
+import com.fernando.proyectofinal.controller.ProductSetInCartAdapter;
 import com.fernando.proyectofinal.model.Cart;
 import com.fernando.proyectofinal.model.InventoryCart;
 import com.fernando.proyectofinal.model.Product;
@@ -44,7 +45,7 @@ public class InventoryCartContent extends AppCompatActivity {
         cartContent.setHasFixedSize(true);
         rCLayoutManager = new LinearLayoutManager(this);
         cartContent.setLayoutManager(rCLayoutManager);
-        rCAdapter = new ProductInCartAdapter(this, productsInCart);
+        rCAdapter = new ProductSetInCartAdapter(this, productsInCart);
         cartContent.setAdapter(rCAdapter);
         updatePrice();
     }
@@ -64,7 +65,9 @@ public class InventoryCartContent extends AppCompatActivity {
 
     public void updatePrice(){
         InventoryCart cart = InventoryCart.getInstance();
-        priceDisplay.setText("$"+ Double.toString(cart.getTotalSum()));
+        Double price =cart.getTotalSum();
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        priceDisplay.setText("$"+ numberFormat.format(cart.getTotalSum()));
 
         cartContent.getAdapter().registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
             @Override

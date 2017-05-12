@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fernando.proyectofinal.ProductDetailActivity;
 import com.fernando.proyectofinal.ProductDetailFragment;
@@ -128,6 +129,7 @@ public class ProductSetSelectorAdapter extends RecyclerView.Adapter<ProductSetSe
             public void onClick(View view) {
                 InventoryCart car = InventoryCart.getInstance();
                 car.addProduct(product);
+                Toast.makeText(mContext,"Added to Inventory",Toast.LENGTH_SHORT).show();
             }
         });
 

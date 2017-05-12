@@ -52,6 +52,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Home");
 
 
         findViews();
@@ -142,10 +143,6 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
             getPersonalFinances();
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 

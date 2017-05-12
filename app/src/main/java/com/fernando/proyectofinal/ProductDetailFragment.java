@@ -56,6 +56,7 @@ public class ProductDetailFragment extends Fragment implements View.OnClickListe
             case R.id.addProductDetailContainerButton:
                     Cart cart = Cart.getInstance();
                     cart.addProduct(product);
+                    Toast.makeText(mContext, "Added to Cart", Toast.LENGTH_SHORT).show();
                 break;
 
         }

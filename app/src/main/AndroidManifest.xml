@@ -9,11 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/customStyleNoBar">
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity
@@ -31,7 +27,14 @@
         <activity android:name=".SetStoreActivity" />
         <activity android:name=".InventoryCartContent" />
         <activity android:name=".ProductInSetDetailActivity" />
-        <activity android:name=".PersonalFinancesActivity"></activity>
+        <activity android:name=".PersonalFinancesActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

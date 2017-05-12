@@ -1,6 +1,7 @@
 package com.fernando.proyectofinal;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -79,6 +80,8 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //createDatabase();
     }
 
     @Override
@@ -197,10 +200,26 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
+    private void createDatabase(){
+        SQLiteHelper db = new SQLiteHelper(this, "AppDB", null,4);
+        SQLiteDatabase dbb = db.getWritableDatabase();
+        //Si hemos abierto correctamente la base de datos
+        if(dbb != null)
+        {
+            //Insertamos 5 usuarios de ejemplo
+            for(int i=1; i<=5; i++)
+            {
+                //Generamos los datos
+                int id = i;
+                int user_id = i;
 
+                //Insertamos los datos en la tabla Usuarios
+                dbb.execSQL("INSERT INTO users (name) " +
+                        "VALUES ("  + "'bola'" +");");
+            }
 
-
-
-
-
-}
+            //Cerramos la base de datos
+            dbb.close();
+        }
+    }
+    }

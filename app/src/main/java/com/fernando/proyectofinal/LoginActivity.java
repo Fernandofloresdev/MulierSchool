@@ -14,7 +14,7 @@ import com.fernando.proyectofinal.model.Cart;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
-    private String emailAccount="oscarfernando_offg@hotmail.com", passwordAccount="y";
+    private String memberAccount="member@gmail.com", passwordAccount="y", clientAccount="client@gmail.com";
     public Cart cart;
 
     @Override
@@ -41,13 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         String emailAccount = sharedPref.getString("email", "");
         String passwordAccount =sharedPref.getString("password","");*/
 
-
-        if(email.equals(emailAccount) && password.equals(passwordAccount)){
+        if(email.equals(memberAccount) && password.equals(passwordAccount)){
             Toast.makeText(this,"Login granted", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
+        }else if(email.equals(clientAccount) && password.equals(passwordAccount)){
+            Intent intent =new Intent(this, PersonalFinancesActivity.class);
+            startActivity(intent);
         }
-
     }
     public void openRegister(View view){
         Intent intent = new Intent(this, RegisterActivity.class);
